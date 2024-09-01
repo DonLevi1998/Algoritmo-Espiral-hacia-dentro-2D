@@ -39,13 +39,13 @@ def codificar(mensaje):
 
     # Manejo del resto de caracteres
     if resto == 1:
-        arreglo += mensaje[-1]  # Agrega el último carácter al final
+        arreglo += mensaje[-1]          # Agrega el último carácter al final
     elif resto == 2:
-        arreglo += mensaje[-2]  # Agrega el penúltimo carácter
-        arreglo += caracter_random()  # Carácter aleatorio
-        arreglo += mensaje[-1]  # Agrega el último carácter
-        arreglo += caracter_random()  # Carácter aleatorio
-        arreglo += mensaje[-1]  # Repite el penúltimo carácter
+        arreglo += mensaje[-2]          # Agrega el penúltimo carácter
+        arreglo += caracter_random()    # Carácter aleatorio
+        arreglo += mensaje[-1]          # Agrega el último carácter
+        arreglo += caracter_random()    # Carácter aleatorio
+        arreglo += mensaje[-1]          # Repite el penúltimo carácter
 
     return arreglo
 
@@ -57,16 +57,16 @@ def decodificar(codificacion):
     # Procesamiento de los bloques de 5 caracteres
     for i in range(0, longitud - resto, 5):
         bloque = codificacion[i:i + 5]
-        result += bloque[0]  # Primer carácter
-        result += bloque[4]  # Carácter del medio
-        result += bloque[2]  # Último carácter
+        result += bloque[0]          
+        result += bloque[4]          
+        result += bloque[2]          
 
     # Manejo del resto de caracteres
     if resto == 1:
-        result += codificacion[-1]  # Agrega el último carácter
+        result += codificacion[-1]  
     elif resto == 2:
-        result += codificacion[-2]  # Agrega el penúltimo carácter
-        result += codificacion[-1]  # Agrega el último carácter
+        result += codificacion[-2]  
+        result += codificacion[-1]  
 
     return result
 
